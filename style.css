@@ -1,0 +1,337 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #ffffff;
+    color: #000000;
+}
+
+/* HERO SECTION */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   
+    padding-top: 0px;
+    padding-bottom: 250px;
+    padding-left: 80px;
+    padding-right: 80px;
+    position: relative;
+}
+
+/* LEFT CONTENT */
+.hero-content {
+    max-width: 520px;
+    position: relative;
+    z-index: 2;
+}
+
+.brand {
+    font-weight: 600;
+    font-size: 18px;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: -30px;
+    position: relative;
+    left: -8px;
+}
+
+.brand img {
+    margin: 0;
+    padding: 0;
+}
+
+.brand h4 {
+    margin: 0;
+    padding: 0;
+}
+
+.hero-content h1 {
+    font-size: 56px;
+    font-weight: 700;
+    margin: 20px 0;
+    line-height: 1.1;
+}
+
+.hero-content h1 span {
+    font-weight: 500;
+}
+
+.subtitle {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+/* FEATURES */
+.features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.box {
+    padding: 9px 18px;
+    background-color: #f5f5f5;
+    border-radius: 999px;   
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.box::before {
+    content: "✔";
+    color: green;
+    font-size: 12px;
+}
+
+.features span {
+    font-size: 14px;
+    padding: 8px 14px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    color: #000;
+}
+
+/* RIGHT IMAGES */
+.hero-images {
+    position: relative;
+    width: 700px;
+    height: 500px;
+    z-index: 2;
+}
+
+.model {
+    position: absolute;
+    max-height: 600px;
+}
+
+.model.male {
+    left: 0px;
+    bottom: -110px;
+}
+
+.model.female {
+    right: 100px;
+    bottom: -90px;
+}
+
+.logo {
+    width: 70px;
+    height: auto;
+    bottom: 30px;
+    margin: 23px;
+}
+
+.bag {
+    position: absolute;
+    bottom: -70px;
+    right: 90px;
+    width: 120px;
+}
+
+/* GET STARTED BAR */
+.get-started-bar {
+    position: fixed;
+    bottom: 50px;
+    right: 1010px;
+    background: #000;
+    color: #fff;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+.get-started-bar p {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+/* BUTTON */
+.get-started-btn {
+    text-decoration: none;
+    background: #fff;
+    color: #000;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.get-started-btn:hover {
+    background: #e5e5e5;
+    transform: translateY(-2px);
+}
+
+/* ===============================================
+   MOBILE RESPONSIVE STYLES
+   =============================================== */
+
+/* Tablets and below (1024px) */
+/* Mobile devices (768px and below) */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        justify-content: center;
+        padding: 40px 24px 120px;
+        min-height: auto;
+        gap: 40px;
+    }
+    
+    .hero-content {
+        max-width: 100%;
+        text-align: center;
+    }
+    
+    .brand {
+        justify-content: center;
+        left: 0;
+        font-size: 16px;
+    }
+    
+    .hero-content h1 {
+        font-size: 36px;
+        margin: 16px 0;
+    }
+    
+    .subtitle {
+        font-size: 14px;
+        margin-bottom: 24px;
+    }
+    
+    .features {
+        justify-content: center;
+        gap: 10px;
+    }
+    
+    .box {
+        padding: 8px 16px;
+        font-size: 13px;
+    }
+    
+    /* Images section for mobile */
+    .hero-images {
+        width: 100%;
+        max-width: 400px;
+        height: 300px;
+        margin: 0 auto;
+    }
+    
+    .model {
+        max-height: 350px;
+    }
+    
+    /* ⭐ MALE MODEL - moved closer to center */
+    .model.male {
+        left: 30px;  /* Changed from -20px to bring closer */
+        bottom: -60px;
+    }
+    
+    /* ⭐ FEMALE MODEL - moved closer to center */
+    .model.female {
+        right: 30px;  /* Changed from -20px to bring closer */
+        bottom: -50px;
+    }
+    
+    /* ⭐ BAG - positioned on right side of female */
+    .bag {
+        width: 80px;
+        bottom: -40px;
+        right: -10px;  /* Changed from 20px to move to right side of female */
+    }
+    
+    .logo {
+        width: 50px;
+        margin: 15px;
+    }
+    
+    /* Get started bar - mobile */
+    .get-started-bar {
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        right: 20px;
+        flex-direction: column;
+        gap: 12px;
+        padding: 16px;
+        text-align: center;
+    }
+    
+    .get-started-bar p {
+        font-size: 13px;
+    }
+    
+    .get-started-btn {
+        width: 100%;
+        padding: 12px 20px;
+    }
+}
+
+/* Small mobile devices (480px and below) */
+@media (max-width: 480px) {
+    .hero {
+        padding: 30px 20px 100px;
+    }
+    
+    .hero-content h1 {
+        font-size: 28px;
+    }
+    
+    .brand {
+        font-size: 14px;
+    }
+    
+    .subtitle {
+        font-size: 13px;
+    }
+    
+    .box {
+        font-size: 12px;
+        padding: 7px 14px;
+    }
+    
+    .hero-images {
+        max-width: 320px;
+        height: 250px;
+    }
+    
+    .model {
+        max-height: 280px;
+    }
+    
+    /* ⭐ MALE MODEL - closer in small screens */
+    .model.male {
+        left: 10px;  /* Changed from -30px to bring closer */
+        bottom: -50px;
+    }
+    
+    /* ⭐ FEMALE MODEL - closer in small screens */
+    .model.female {
+        right: 10px;  /* Changed from -30px to bring closer */
+        bottom: -40px;
+    }
+    
+    /* ⭐ BAG - right side of female in small screens */
+    .bag {
+        width: 60px;
+        bottom: -30px;
+        right: -15px;  /* Changed from 10px to keep it on right side */
+    }
+    
+    .logo {
+        width: 40px;
+        margin: 12px;
+    }
+}
